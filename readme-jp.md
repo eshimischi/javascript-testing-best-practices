@@ -1528,15 +1528,15 @@ describe("visual validation", () => {
 
 <br/><br/>
 
-# Section 4️⃣: Measuring Test Effectiveness
+# Section 4️⃣: テストの有効性の測定
 
 <br/><br/>
 
-## ⚪ ️ 4.1 Get enough coverage for being confident, ~80% seems to be the lucky number
+## ⚪ ️ 4.1 信頼を持つために十分なカバレッジを得る。
 
-:white_check_mark: **Do:** The purpose of testing is to get enough confidence for moving fast, obviously the more code is tested the more confident the team can be. Coverage is a measure of how many code lines (and branches, statements, etc) are being reached by the tests. So how much is enough? 10–30% is obviously too low to get any sense about the build correctness, on the other side 100% is very expensive and might shift your focus from the critical paths to the exotic corners of the code. The long answer is that it depends on many factors like the type of application — if you’re building the next generation of Airbus A380 than 100% is a must, for a cartoon pictures website 50% might be too much. Although most of the testing enthusiasts claim that the right coverage threshold is contextual, most of them also mention the number 80% as a thumb of a rule ([Fowler: “in the upper 80s or 90s”](https://martinfowler.com/bliki/TestCoverage.html)) that presumably should satisfy most of the applications.
+:white_check_mark: **こうしましょう:** テストの目的は、迅速に作業を進めるための十分な信用を得ることであり、当然ながら、より多くのコードがテストされればされるほど、チームはコードに対する信用を持つことができます。 カバレッジとは、テストによって到達したコードライン（およびブランチ、ステートメントなど）の数を示す指標です。 では、どの程度であれば十分なのでしょうか？ 10-30%は明らかに低すぎて、ビルドが正しいと確信することができません。一方で、100%は非常に高コストで、コードのクリティカルパスからエキゾチックなコーナーケースに焦点移してしまうことになるかもしれません。長い答えになりますが、最適なカバレッジはアプリケーションの種類など多くの要因に左右されます。- もしあなたが次世代のエアバスA380を作っているのであれば、100%が必須です。漫画の絵のウェブサイトに50％は多すぎるかもしれません。テスト愛好家の多くは、適切なカバレッジの閾値は環境によって決まると主張しながらも、おそらくほとんどのアプリケーションを満足させる大雑把なルールとして、80%という数字を挙げています（[Fowler: “in the upper 80s or 90s”](https://martinfowler.com/bliki/TestCoverage.html)）。
 
-Implementation tips: You may want to configure your continuous integration (CI) to have a coverage threshold ([Jest link](https://jestjs.io/docs/en/configuration.html#collectcoverage-boolean)) and stop a build that doesn’t stand to this standard (it’s also possible to configure threshold per component, see code example below). On top of this, consider detecting build coverage decrease (when a newly committed code has less coverage) — this will push developers raising or at least preserving the amount of tested code. All that said, coverage is only one measure, a quantitative based one, that is not enough to tell the robustness of your testing. And it can also be fooled as illustrated in the next bullets
+実装のTips: 継続的インテグレーション(CI)にカバレッジの閾値を設定し([Jestだとこちら](https://jestjs.io/docs/en/configuration.html#collectcoverage-boolean))、この基準に満たないビルドを停止させることもできます(コンポーネントごとに閾値を設定することも可能です。以下のコード例をみてください)。On top of this, consider detecting build coverage decrease (when a newly committed code has less coverage) — this will push developers raising or at least preserving the amount of tested code. All that said, coverage is only one measure, a quantitative based one, that is not enough to tell the robustness of your testing. And it can also be fooled as illustrated in the next bullets
 
 <br/>
 
